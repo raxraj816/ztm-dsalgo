@@ -1,5 +1,3 @@
-const { performance } = require("perf_hooks");
-
 function findSweta(array) {
   let t0 = performance.now();
   for (let i = 0; i < array.length; i++) {
@@ -11,4 +9,5 @@ function findSweta(array) {
   console.log(`Call to find Sweta took ${t1 - t0} milliseconds`);
 }
 
-module.exports = findSweta;
+const large = new Array(10).fill("Sweta");
+findSweta(large); // O(n) -> Linear Time
